@@ -42,7 +42,7 @@ CREATE TABLE Booking(
     peopleNumber INT NOT NULL,
     startDate DATE NOT NULL,
     endDate DATE NOT NULL,
-    night INT NOT NULL,
+    nightNumber INT NOT NULL,
     totalPrice DOUBLE NOT NULL,
     deposit DOUBLE,
     checkInDate DATE,

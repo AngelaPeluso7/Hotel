@@ -35,10 +35,10 @@ INSERT INTO TypeRoom(typology,price) VALUES
                     ('TRIPLE',80.00),
                     ('QUADRUPLE',100.00);
 
-INSERT INTO Booking	(id,	room,	client,				peopleNumber,	startDate,		endDate,		night, 	totalPrice,	deposit,	checkInDate,	checkOutDate) VALUES
-					(1,		101,	'RSSMRA87C24A522K',	1,				'2017-06-22',	'2017-06-28',	6,		180.00,		50.00,		'',				''			),	
-                    (2,		201,	'FRSGVN78D20N456L',	2,				'2017-07-20',	'2017-07-27',	7,		350.00,		100.00,		'',				''			),
-                    (3,		401,	'LPVDES67F13L234C',	4,				'2017-06-18',	'2017-06-26',	8,		800.00,		200.00,		'',				''			),	
-                    (4,		301,	'LKJMRD56E12P990E',	3,				'2017-08-10',	'2017-08-17',	7,		560.00,		100.00,		'',				''			),
-                    (5,		202,	'PLRSRD78D30O433T',	2,				'2017-07-15',	'2017-07-18',	3,		100.00,		50.00,		'',				''			),
-					(6,		201,	'FRSGVN78D20N456L',	2,				'2017-08-20',	'2017-08-27',	7,		350.00,		100.00,		'',				''			);
+INSERT INTO Booking	(id,	room,	client,				peopleNumber,	startDate,		endDate,		nightNumber, 	totalPrice,	deposit,	checkInDate,	checkOutDate) VALUES
+					(1,		101,	'RSSMRA87C24A522K',	1,				'2017-06-22',	'2017-06-28',	6,				180.00,		50.00,		NULL,			NULL		),	
+                    (2,		201,	'FRSGVN78D20N456L',	2,				'2017-07-20',	'2017-07-27',	7,				350.00,		100.00,		NULL,			NULL		),
+                    (3,		401,	'LPVDES67F13L234C',	4,				'2017-06-18',	'2017-06-26',	8,				800.00,		200.00,		NULL,			NULL		),	
+                    (4,		301,	'LKJMRD56E12P990E',	3,				'2017-08-10',	'2017-08-17',	7,				560.00,		100.00,		NULL,			NULL		),
+                    (5,		202,	'PLRSRD78D30O433T',	2,				'2017-07-15',	'2017-07-18',	3,				100.00,		50.00,		NULL,			NULL		),
+					(6,		201,	'FRSGVN78D20N456L',	2,				'2017-08-20',	'2017-08-27',	7,				350.00,		100.00,		NULL,			NULL		);
