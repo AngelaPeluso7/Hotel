@@ -1,10 +1,10 @@
-INSERT INTO Client  (fiscalCode,			name,		surname,	address,					city,		country,	phoneNumber) VALUES
-					('RSSMRA87C24A522K', 	'Mario',	'Rossi',	'via Vittorio Emanuele,33',	'Roma',		'Italia',	'3453745521'),
-					('FRSGVN78D20N456L',	'Giovanni',	'Farisco',	'piazza Centrale,21',		'Napoli',	'Italia',	'3245533123'),
-                    ('LPVDES67F13L234C',	'Filippo',	'Bianco',	'Corso Umberto,16',			'Bergamo',	'Italia',	'3347678456'),
-                    ('LKJMRD56E12P990E',	'Maria',	'Salice',	'Via Matteotti,11',			'Pavia',	'Italia',	'3283182443'),
-                    ('PLRSRD78D30O433T',	'Teresa',	'Covotta',	'Via Lunga,101',			'Lecce',	'Italia',	'3393542234');
-                    
+INSERT INTO Client  (fiscalCode,			name,			surname,	dateOfBirth,	address,					city,		country,	phoneNumber) VALUES
+					('RSSMRA87C24A522K', 	'Mario',		'Rossi',	'1987-06-22',	'Via Vittorio Emanuele,33',	'Roma',		'Italia',	'3453745521'),
+					('FRSGVN78D20N456L',	'Giovanni',		'Farisco',	'1978-07-20',	'Piazza Centrale,21',		'Napoli',	'Italia',	'3245533123'),
+                    ('LPVDES67F13L234C',	'Filippo',		'Bianco',	'1967-06-18',	'Corso Umberto,16',			'Bergamo',	'Italia',	'3347678456'),
+                    ('LKJMRD56E12P990E',	'Maria',		'Salice',	'1956-08-10',	'Via Matteotti,11',			'Pavia',	'Italia',	'3283182443'),
+                    ('PLRSRD78D30O433T',	'Teresa',		'Covotta',	'1978-07-15',	'Via Lunga,101',			'Lecce',	'Italia',	'3393542234');
+                                                       
                     
 INSERT INTO Room(number,type,actualState) VALUES
 				(101,'SINGLE','FREE'),

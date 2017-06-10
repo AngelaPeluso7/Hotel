@@ -11,6 +11,8 @@ public class TypeRoomModel {
 		this.typology = typology;
 		this.price = price;
 	}
+	public TypeRoomModel() {
+	}
 	public Typology getTypology() {
 		return typology;
 	}
@@ -26,6 +28,9 @@ public class TypeRoomModel {
 	@Override
 	public String toString() {
 		return "TypeRoomModel [typology=" + typology + ", price=" + price + "]";
+	}
+	public void setTypology(String string) {
+		this.typology = typology;
 	}
 
 }

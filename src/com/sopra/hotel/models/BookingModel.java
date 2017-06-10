@@ -30,6 +30,9 @@ public class BookingModel {
 		this.checkOutDate = checkOutDate;
 	}
 
+	public BookingModel() {
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -125,6 +128,5 @@ public class BookingModel {
 				+ totalPrice + ", deposit=" + deposit + ", checkInDate=" + checkInDate + ", checkOutDate="
 				+ checkOutDate + "]";
 	}
-    
     
 }

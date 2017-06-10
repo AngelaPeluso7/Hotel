@@ -12,6 +12,7 @@ CREATE TABLE Client(
 	fiscalCode VARCHAR(64) NOT NULL PRIMARY KEY,
     name VARCHAR(32) NOT NULL,
     surname VARCHAR(32) NOT NULL,
+    dateOfBirth VARCHAR(32) NOT NULL,
     address VARCHAR(64) NOT NULL,
     city VARCHAR(32) NOT NULL,
     country VARCHAR(32) NOT NULL,

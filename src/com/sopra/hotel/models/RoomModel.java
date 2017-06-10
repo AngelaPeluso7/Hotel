@@ -3,16 +3,27 @@ import com.sopra.hotel.models.RoomModel;
 
 public class RoomModel {
 	int number;
-	TypeRoomModel typeRoom;
+	Typology typeRoom;
 	ActualState actualState;
 	
-	public RoomModel(int number, TypeRoomModel typeRoom, ActualState actualState) {
+	public RoomModel(int number, Typology typeRoom, ActualState actualState) {
 		super();
 		this.number = number;
 		this.typeRoom = typeRoom;
 		this.actualState = actualState;
 	}
+	public RoomModel() {
+	}
+	
+	public RoomModel(int number) {
+		this.number = number;
+	}
 
+	public RoomModel(int number, Typology typeRoom) {
+		this.number = number;
+		this.typeRoom = typeRoom;
+	}
+	
 	public int getNumber() {
 		return number;
 	}
@@ -21,11 +32,11 @@ public class RoomModel {
 		this.number = number;
 	}
 
-	public TypeRoomModel getTypeRoom() {
+	public Typology getTypeRoom() {
 		return typeRoom;
 	}
 
-	public void setTypeRoom(TypeRoomModel typeRoom) {
+	public void setTypeRoom(Typology typeRoom) {
 		this.typeRoom = typeRoom;
 	}
 

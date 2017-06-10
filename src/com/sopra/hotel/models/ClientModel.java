@@ -1,21 +1,24 @@
 package com.sopra.hotel.models;
 
 public class ClientModel {
-	String fiscalCode,name,surname, address, city, country;
-	int phoneNumber;
+	String fiscalCode,name,surname,dateOfBirth,address, city, country, phoneNumber;
 	
-	public ClientModel(String fiscalCode, String name, String surname, String address, String city,
-			String country, int phoneNumber) {
+	public ClientModel(String fiscalCode, String name, String surname, String dateOfBirth, String address, String city,
+			String country, String phoneNumber) {
 		super();
 		this.fiscalCode = fiscalCode;
 		this.name = name;
 		this.surname = surname;
+		this.dateOfBirth = dateOfBirth;
 		this.address = address;
 		this.city = city;
 		this.country = country;
 		this.phoneNumber = phoneNumber;
 	}
 	
+	public ClientModel() {
+	}
+
 	public String getFiscalCode() {
 		return fiscalCode;
 	}
@@ -39,7 +42,14 @@ public class ClientModel {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+	
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
 
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
 	public String getAddress() {
 		return address;
 	}
@@ -64,18 +74,20 @@ public class ClientModel {
 		this.country = country;
 	}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "DefaultClientModel [fiscalCode=" + fiscalCode + ", name=" + name + ", surname=" + surname + ", address="
-				+ address + ", city=" + city + ", country=" + country + ", phoneNumber=" + phoneNumber + "]";
+		return "ClientModel [fiscalCode=" + fiscalCode + ", name=" + name + ", surname=" + surname + ", dateOfBirth="
+				+ dateOfBirth + ", address=" + address + ", city=" + city + ", country=" + country + ", phoneNumber="
+				+ phoneNumber + "]";
 	}
+
+	
 }
