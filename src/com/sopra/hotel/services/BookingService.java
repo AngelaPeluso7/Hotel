@@ -1,11 +1,11 @@
-package com.sopra.hotel.DAO;
+package com.sopra.hotel.services;
 
 import java.util.List;
 
 import com.sopra.hotel.models.BookingModel;
 
-public interface BookingDAO {
-
+public interface BookingService {
+	
 	public boolean newReservation(BookingModel bookingModel);
 	
 	public List<BookingModel> viewAllReservation();

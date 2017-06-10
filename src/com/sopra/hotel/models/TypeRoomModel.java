@@ -29,8 +29,4 @@ public class TypeRoomModel {
 	public String toString() {
 		return "TypeRoomModel [typology=" + typology + ", price=" + price + "]";
 	}
-	public void setTypology(String string) {
-		this.typology = typology;
-	}
-
 }

@@ -88,6 +88,4 @@ public class ClientModel {
 				+ dateOfBirth + ", address=" + address + ", city=" + city + ", country=" + country + ", phoneNumber="
 				+ phoneNumber + "]";
 	}
-
-	
 }

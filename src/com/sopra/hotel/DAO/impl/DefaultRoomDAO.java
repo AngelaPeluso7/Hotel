@@ -13,7 +13,6 @@ import org.apache.log4j.Logger;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import com.sopra.hotel.DAO.RoomDAO;
 import com.sopra.hotel.models.RoomModel;
-import com.sopra.hotel.models.TypeRoomModel;
 
 public class DefaultRoomDAO implements RoomDAO {
 	final static Logger log=Logger.getLogger(DefaultRoomDAO.class);
