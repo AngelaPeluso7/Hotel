@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.dbutils.DbUtils;
@@ -65,7 +66,7 @@ public class DefaultBookingDAO implements BookingDAO {
             PreparedStatement stmt = conn.prepareStatement(query);
             ResultSet result = stmt.executeQuery();
             if (result.first()) {
-            	List<BookingModel> reservationsList=null;
+            	final List<BookingModel> reservationsList=new ArrayList<BookingModel>();
             	while (result.next()){
             		BookingModel reservation=new BookingModel();
             		RoomModel room=new RoomModel();

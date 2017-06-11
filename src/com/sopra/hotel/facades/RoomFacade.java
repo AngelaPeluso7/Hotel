@@ -2,7 +2,7 @@ package com.sopra.hotel.facades;
 
 import java.util.List;
 
-import com.sopra.hotel.models.RoomModel;
+import com.sopra.hotel.data.RoomData;
 
 public interface RoomFacade {
 	
@@ -10,7 +10,7 @@ public interface RoomFacade {
     
 	public boolean checkIsBusy(int roomNumber);
 
-	public List<RoomModel> viewAllRoomFree();
+	public List<RoomData> viewAllRoomFree();
 	
 	public boolean checkIn(int roomNumber);
 	

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.dbutils.DbUtils;
@@ -81,7 +82,7 @@ public class DefaultRoomDAO implements RoomDAO {
             PreparedStatement stmt = conn.prepareStatement(query);
             ResultSet result = stmt.executeQuery();
             if (result.first()) {
-            	List<RoomModel> roomsList=null;
+            	final List<RoomModel> roomsList=new ArrayList<RoomModel>();
             	while (result.next()){
             		int n = result.getInt("number");
             		RoomModel roomModel=new RoomModel();
