@@ -46,5 +46,28 @@ public class DefaultBookingFacade implements BookingFacade {
         }
         return reservationsData;
 	}
-
+	public BookingData getBooking(int id){
+		BookingModel reservation = bookingService.getBooking(id);
+        final BookingData reservationData = new BookingData();
+            reservationData.setId(reservation.getId());
+            reservationData.setRoom(reservation.getRoom());
+            reservationData.setClient(reservation.getClient());
+            reservationData.setPeopleNumber(reservation.getPeopleNumber());
+            reservationData.setStartDate(reservation.getStartDate());
+            reservationData.setEndDate(reservation.getEndDate());
+            reservationData.setNightNumber(reservation.getNightNumber());
+            reservationData.setTotalPrice(reservation.getTotalPrice());
+            reservationData.setDeposit(reservation.getDeposit());
+            reservationData.setCheckInDate(reservation.getCheckInDate());
+            reservationData.setCheckOutDate(reservation.getCheckOutDate());
+        return reservationData;
+	}
+	
+	public int getLastId(){
+		return bookingService.getLastId();
+	}
+	
+	//TODO public RoomData getRoom(RoomModel room)
+	
+	//TODO public ClientData getRoom(ClientModel client)
 }

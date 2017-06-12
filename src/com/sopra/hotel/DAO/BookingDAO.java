@@ -9,4 +9,8 @@ public interface BookingDAO {
 	public boolean newReservation(BookingModel bookingModel);
 	
 	public List<BookingModel> viewAllReservation();
+	
+	public BookingModel getBooking(int id);
+	
+	public int getLastId();
 }

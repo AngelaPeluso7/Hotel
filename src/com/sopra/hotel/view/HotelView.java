@@ -18,9 +18,11 @@ public class HotelView {
 	public static void main (String[] args){
 		BookingController bookingController=new BookingController();
 		RoomController roomController=new RoomController();
+		//BookingData bookingData;
+		BookingModel bookingModel;
 		Scanner scan = new Scanner(System.in);
 		String chois;
-		String menu="***BOOKING*** SCEGLI L'OPERAZIONE DA ESEGUIRE E INSERISCI IL NUMERO SCELTO:\n"
+		String menu="***BOOKING*** SCEGLI L'OPERAZIONE DA ESEGUIRE E INSERISCI IL NUMERO CORRISPONDENTE:\n"
 				+"1) Visualizza prenotazioni\n"
 				+"2) Visualizza camere libere\n"
 				+"3) Prenota camera\n"
@@ -32,9 +34,11 @@ public class HotelView {
 			chois=scan.nextLine();
 			if ((chois.length()==1) && Integer.parseInt(chois)>0 && Integer.parseInt(chois)<7){
 					switch(Integer.parseInt(chois)){
-					case 1:
+					case 1:{
 						System.out.println("***Visualizza prenotazioni***");
+						//TODO inizializzare booking
 						System.out.println(bookingController.viewAllReservation());
+					}
 						break;
 					case 2:
 						System.out.println("***Visualizza camere libere***");
@@ -72,8 +76,9 @@ public class HotelView {
 							roomModel.setNumber(room);
 							ClientModel clientModel=new ClientModel();
 							clientModel.setFiscalCode(client);
-							BookingModel bookingModel=new BookingModel();
-							//TODO Metodo che restituisce l'ultimo id utilizzato
+							bookingModel=new BookingModel();
+							//int lastId=bookingModel.getLastId;
+							//bookingModel.setId(lastId+1);
 							bookingModel.setId(id);
 							bookingModel.setRoom(roomModel);
 							bookingModel.setClient(clientModel);
@@ -93,14 +98,14 @@ public class HotelView {
 						System.out.println("Inserire numero Camera per CHECK-IN --->");
 						chois=scan.nextLine();
 						System.out.println(roomController.checkIn(Integer.parseInt(chois)));
-						//TODO Metodo in Booking che inserisce la check in date nel model
+						//bookingModel.setCheckInDate(checkInDate); inserire data di oggi
 						break;
 					case 5:
 						System.out.println("***Check OUT***");
 						System.out.println("Inserire numero Camera per CHECK-OUT --->");
 						chois=scan.nextLine();
 						System.out.println(roomController.checkOut(Integer.parseInt(chois)));
-						//TODO Metodo in Booking che inserisce la check out date nel model
+						//bookingModel.setCheckOutDate(checkOutDate); inserire data di oggi
 						break;
 					case 6:
 						System.out.println("***Chiudi applicazione***");
@@ -111,7 +116,7 @@ public class HotelView {
 					}
 			}
 			else{
-				System.out.println("ERRORR!!! Bisogna inserire un numero da 1 a 6\n");
+				System.out.println("ERROR!!!\n");
 			}
 		}while(Integer.parseInt(chois)!=6 );
 		System.out.println("Arrivederci!");

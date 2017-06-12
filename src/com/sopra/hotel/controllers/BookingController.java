@@ -10,6 +10,8 @@ import com.sopra.hotel.models.BookingModel;
 public class BookingController {
 	
 	private BookingFacade bookingFacade;
+	private BookingModel bookingModel;
+	private BookingData bookingData;
 	
 	public String newReservation(BookingModel bookingModel){
 		String print;
@@ -34,4 +36,29 @@ public class BookingController {
 		}
 		return print;
 	}
+
+	public String getBooking(int id){
+		BookingData reservation=bookingFacade.getBooking(id);
+		String print =reservation.toString();
+		return print;
+	}
+	
+	public int getLastId(){
+		return bookingFacade.getLastId();
+	}
+	
+	public BookingModel getBookingModel() {
+        return bookingModel;
+    }
+
+    public void setBookingModel(BookingModel bookingModel) {
+        this.bookingModel = bookingModel;
+    }
+    public BookingData getBookingData() {
+        return bookingData;
+    }
+
+    public void setBookingModel(BookingData bookingData) {
+        this.bookingData = bookingData;
+    }
 }

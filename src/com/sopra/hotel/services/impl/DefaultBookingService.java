@@ -17,4 +17,12 @@ public class DefaultBookingService implements BookingService {
 	public List<BookingModel> viewAllReservation(){
 		return bookingDAO.viewAllReservation();
 	}
+	
+	public BookingModel getBooking(int id){
+		return bookingDAO.getBooking(id);
+	}
+	
+	public int getLastId(){
+		return bookingDAO.getLastId();
+	}
 }

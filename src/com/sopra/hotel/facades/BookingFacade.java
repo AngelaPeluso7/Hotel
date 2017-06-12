@@ -10,4 +10,8 @@ public interface BookingFacade {
 	public boolean newReservation(BookingModel bookingModel);
 	
 	public List<BookingData> viewAllReservation();
+	
+	public BookingData getBooking(int id);
+	
+	public int getLastId();
 }
