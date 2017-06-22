@@ -1,13 +1,19 @@
 package com.sopra.hotel.DAO;
 
+import java.util.List;
+
 import com.sopra.hotel.models.ClientModel;
 
 public interface ClientDAO {
 	
 	public boolean newClient(ClientModel clientModel);
 	
-	public ClientModel getClientInfoToFiscalCode(String fiscalCode);
+	public ClientModel findById(int idClient);
 	
-	public ClientModel getClientInfoToNumber(String phoneNumber);
+	public ClientModel findByFiscalCode(String fiscalCode);
+	
+	public ClientModel findByNumber(String phoneNumber);
+	
+	public List<ClientModel> findAll();
 	
 }

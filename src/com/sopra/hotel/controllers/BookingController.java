@@ -5,26 +5,30 @@ import java.util.List;
 
 import com.sopra.hotel.data.BookingData;
 import com.sopra.hotel.facades.BookingFacade;
-import com.sopra.hotel.models.BookingModel;
+import com.sopra.hotel.facades.impl.DefaultBookingFacade;
 
 public class BookingController {
 	
 	private BookingFacade bookingFacade;
-	private BookingModel bookingModel;
-	private BookingData bookingData;
 	
-	public String newReservation(BookingModel bookingModel){
-		String print;
-		if(bookingFacade.newReservation(bookingModel)){
-			print="SUCCESS!!! The new reservation was made";
+	public BookingController() {
+		this.bookingFacade=new DefaultBookingFacade();
+	}
+
+	public boolean newBooking(BookingData bookingData){
+		Boolean added=false;
+		if(bookingFacade.newBooking(bookingData)){
+			added=true;
 		}
-		else print="ERRORR!!! The new reservation has NOT been made";
-		return print;
+		return added;
+//			print="SUCCESS!!! The new reservation was made";
+//		}
+//		else print="ERRORR!!! The new reservation has NOT been made";
+//		return print;
 	}
 	
-	public String viewAllReservation(){
-		List<BookingData> reservationsList=bookingFacade.viewAllReservation();
-		
+	public String showAll(){
+		List<BookingData> reservationsList=bookingFacade.getAll();
 		ArrayList<String> reservationsListPrint = new ArrayList<String>();
 		for (BookingData b: reservationsList){
 			reservationsListPrint.add(b.toString());
@@ -36,29 +40,26 @@ public class BookingController {
 		}
 		return print;
 	}
+	
+	public List<BookingData> getAll(){
+		return bookingFacade.getAll();
+	}
 
-	public String getBooking(int id){
-		BookingData reservation=bookingFacade.getBooking(id);
+	public String viewById(int idBooking){
+		BookingData reservation=bookingFacade.getById(idBooking);
 		String print =reservation.toString();
 		return print;
 	}
-	
-	public int getLastId(){
-		return bookingFacade.getLastId();
+	public BookingData getById(int idBooking){
+		BookingData bookingData=bookingFacade.getById(idBooking);
+		return bookingData;
 	}
 	
-	public BookingModel getBookingModel() {
-        return bookingModel;
-    }
-
-    public void setBookingModel(BookingModel bookingModel) {
-        this.bookingModel = bookingModel;
-    }
-    public BookingData getBookingData() {
-        return bookingData;
-    }
-
-    public void setBookingModel(BookingData bookingData) {
-        this.bookingData = bookingData;
-    }
+	public boolean checkIn(int roomNumber,String checkInDate){
+		return bookingFacade.checkIn(roomNumber, checkInDate);
+	}
+	
+	public boolean checkOut(int roomNumber,String checkOutDate){
+		return bookingFacade.checkOut(roomNumber, checkOutDate);
+	}
 }

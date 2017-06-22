@@ -1,22 +1,32 @@
 package com.sopra.hotel.data;
 
-import com.sopra.hotel.models.Typology;
-
 public class TypeRoomData {
-	Typology typology;
+	int idTypeRoom;
+	String typology;
 	double price;
-		
-	public TypeRoomData(Typology typology, double price) {
-		super();
+	
+	public TypeRoomData(int idTypeRoom, String typology, double price) {
+		this.idTypeRoom = idTypeRoom;
 		this.typology = typology;
 		this.price = price;
 	}
 
-	public Typology getTypology() {
+	public TypeRoomData() {
+	}
+
+	public int getIdTypeRoom() {
+		return idTypeRoom;
+	}
+
+	public void setIdTypeRoom(int idTypeRoom) {
+		this.idTypeRoom = idTypeRoom;
+	}
+
+	public String getTypology() {
 		return typology;
 	}
 
-	public void setTypology(Typology typology) {
+	public void setTypology(String typology) {
 		this.typology = typology;
 	}
 
@@ -30,7 +40,7 @@ public class TypeRoomData {
 
 	@Override
 	public String toString() {
-		return "TypeRoomData [typology=" + typology + ", price=" + price + "]";
+		return "TypeRoomData [idTypeRoom=" + idTypeRoom + ", typology=" + typology + ", price=" + price + "]";
 	}
 	
 }

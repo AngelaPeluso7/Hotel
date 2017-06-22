@@ -3,15 +3,16 @@ package com.sopra.hotel.facades;
 import java.util.List;
 
 import com.sopra.hotel.data.BookingData;
-import com.sopra.hotel.models.BookingModel;
 
 public interface BookingFacade {
 	
-	public boolean newReservation(BookingModel bookingModel);
+	public boolean newBooking(BookingData bookingData);
 	
-	public List<BookingData> viewAllReservation();
+	public List<BookingData> getAll();
 	
-	public BookingData getBooking(int id);
+	public BookingData getById(int idBooking);
 	
-	public int getLastId();
+	public boolean checkIn(int roomNumber,String checkInDate);
+	
+	public boolean checkOut(int roomNumber,String checkOutDate);
 }

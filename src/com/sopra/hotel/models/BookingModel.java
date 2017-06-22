@@ -1,25 +1,26 @@
 package com.sopra.hotel.models;
 
 import java.sql.Date;
-
 import com.sopra.hotel.models.BookingModel;
 
 public class BookingModel {
-	int id;
-    RoomModel room;
-	ClientModel client;
-	int peopleNumber;
-	Date startDate,endDate;
-    int nightNumber;
-    Double totalPrice,deposit;
-    Date checkInDate,checkOutDate;
-    
-	public BookingModel(int id, RoomModel room, ClientModel client, int peopleNumber, Date startDate, Date endDate,
+	private int idBooking;
+	private int idRoom;
+	private int idClient;
+	private int peopleNumber;
+	private Date startDate;
+	private Date endDate;
+	private int nightNumber;
+	private Double totalPrice;
+	private Double deposit;
+	private Date checkInDate;
+	private Date checkOutDate;
+
+	public BookingModel(int idBooking, int idRoom, int idClient, int peopleNumber, Date startDate, Date endDate,
 			int nightNumber, Double totalPrice, Double deposit, Date checkInDate, Date checkOutDate) {
-		super();
-		this.id = id;
-		this.room = room;
-		this.client = client;
+		this.idBooking = idBooking;
+		this.idRoom = idRoom;
+		this.idClient = idClient;
 		this.peopleNumber = peopleNumber;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -33,32 +34,46 @@ public class BookingModel {
 	public BookingModel() {
 	}
 
-	public int getId() {
-		return id;
+	public int getIdBooking() {
+		return idBooking;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idBooking) {
+		this.idBooking = idBooking;
 	}
 
-	public RoomModel getRoom() {
-		return room;
-	}
+//	public RoomModel getRoom() {
+//		if (room == null) {
+//			room = new RoomDAO().findbyPK(roomId);
+//		}
+//		return room;
+//	}
 
-	public void setRoom(RoomModel room) {
-		this.room = room;
-	}
-
-	public ClientModel getClient() {
-		return client;
-	}
-
-	public void setClient(ClientModel client) {
-		this.client = client;
-	}
+//	public ClientModel getClient() {
+//		if (client == null) {
+//			client = new ClientDAO().findbyPK(clientId);
+//		}
+//		return client;
+//	}
 
 	public int getPeopleNumber() {
 		return peopleNumber;
+	}
+
+	public int getIdRoom() {
+		return idRoom;
+	}
+
+	public void setIdRoom(int idRoom) {
+		this.idRoom = idRoom;
+	}
+
+	public int getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
 	}
 
 	public void setPeopleNumber(int peopleNumber) {
@@ -123,10 +138,9 @@ public class BookingModel {
 
 	@Override
 	public String toString() {
-		return "BookingModel [id=" + id + ", room=" + room + ", client=" + client + ", peopleNumber=" + peopleNumber
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", nightNumber=" + nightNumber + ", totalPrice="
-				+ totalPrice + ", deposit=" + deposit + ", checkInDate=" + checkInDate + ", checkOutDate="
-				+ checkOutDate + "]";
+		return "BookingModel [idBooking=" + idBooking + ", idRoom=" + idRoom + ", idClient=" + idClient
+				+ ", peopleNumber=" + peopleNumber + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", nightNumber=" + nightNumber + ", totalPrice=" + totalPrice + ", deposit=" + deposit
+				+ ", checkInDate=" + checkInDate + ", checkOutDate=" + checkOutDate + "]";
 	}
-    
 }

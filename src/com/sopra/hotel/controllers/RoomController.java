@@ -5,10 +5,14 @@ import java.util.List;
 
 import com.sopra.hotel.data.RoomData;
 import com.sopra.hotel.facades.RoomFacade;
+import com.sopra.hotel.facades.impl.DefaultRoomFacade;
 
 public class RoomController {
 	private RoomFacade roomFacade;
 	
+	public RoomController(){
+		this.roomFacade=new DefaultRoomFacade();
+	}
 	public String checkIsFree(int roomNumber){
 		if(roomFacade.checkIsFree(roomNumber)){
 			return "The room Number: "+ roomNumber+" is FREE now.";
@@ -23,8 +27,8 @@ public class RoomController {
 		else return "The room Number: "+ roomNumber+" is NOT BUSY now.";
 	}
 
-	public String viewAllRoomFree(){
-		List<RoomData> roomsList= roomFacade.viewAllRoomFree();
+	public String showAllRoomFree(){
+		List<RoomData> roomsList= roomFacade.getAllRoomFree();
 		
 		ArrayList<String> roomsListPrint = new ArrayList<String>();
 		for (RoomData r: roomsList){
@@ -54,5 +58,17 @@ public class RoomController {
 		}
 		else print="ERRORR!!! The checkOut has NOT been added";
 		return print;
+	}
+	
+	public List<RoomData> getAll(){
+		return roomFacade.getAll();
+	}
+
+	public RoomData getById(int idRoom){
+		return roomFacade.getById(idRoom);
+	}
+	
+	public int getIdRoom(int number){
+		return roomFacade.getIdRoom(number);
 	}
 }

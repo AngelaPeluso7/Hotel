@@ -10,9 +10,15 @@ public interface RoomService {
 	    
 	public boolean checkIsBusy(int roomNumber);
 
-	public List<RoomModel> viewAllRoomFree();
+	public List<RoomModel> getAllRoomFree();
 	
 	public boolean checkIn(int roomNumber);
 	
 	public boolean checkOut(int roomNumber);
+	
+	public List<RoomModel> getAll();
+	
+	public RoomModel getById(int idRoom);
+	
+	public int getIdRoom(int number);
 }

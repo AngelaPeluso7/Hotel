@@ -1,21 +1,26 @@
 package com.sopra.hotel.data;
 
-import com.sopra.hotel.models.ActualState;
-import com.sopra.hotel.models.Typology;
-
 public class RoomData {
+	int idRoom;
 	int number;
-	Typology typeRoom;
-	ActualState actualState;
+	int idType;
+	String actualState;
 	
-	public RoomData(int number, Typology typeRoom, ActualState actualState) {
-		super();
+	public RoomData(int idRoom, int number, int idType, String actualState) {
+		this.idRoom = idRoom;
 		this.number = number;
-		this.typeRoom = typeRoom;
+		this.idType = idType;
 		this.actualState = actualState;
 	}
-
 	public RoomData() {
+	}
+	
+	public int getIdRoom() {
+		return idRoom;
+	}
+
+	public void setIdRoom(int idRoom) {
+		this.idRoom = idRoom;
 	}
 
 	public int getNumber() {
@@ -26,26 +31,26 @@ public class RoomData {
 		this.number = number;
 	}
 
-	public Typology getTypeRoom() {
-		return typeRoom;
+	public int getIdType() {
+		return idType;
 	}
 
-	public void setTypeRoom(Typology typeRoom) {
-		this.typeRoom = typeRoom;
+	public void setIdType(int idType) {
+		this.idType = idType;
 	}
 
-	public ActualState getActualState() {
+	public String getActualState() {
 		return actualState;
 	}
 
-	public void setActualState(ActualState actualState) {
+	public void setActualState(String actualState) {
 		this.actualState = actualState;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "RoomData [number=" + number + ", typeRoom=" + typeRoom + ", actualState=" + actualState + "]";
+		return "RoomData [idRoom=" + idRoom + ", number=" + number + ", idType=" + idType + ", actualState="
+				+ actualState + "]";
 	}
-	
 	
 }

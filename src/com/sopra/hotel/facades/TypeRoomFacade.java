@@ -1,10 +1,16 @@
 package com.sopra.hotel.facades;
 
-import com.sopra.hotel.models.Typology;
+import java.util.List;
+
+import com.sopra.hotel.data.TypeRoomData;
 
 public interface TypeRoomFacade {
 	
-	public double getPrice(Typology typology);
+	public double getPrice(String typology);
 	
-	public boolean updateNewPrice(Typology typology, double newPrice);	
+	public boolean updateNewPrice(String typology, double newPrice);	
+	
+	public List<TypeRoomData> getAll();
+	
+	public TypeRoomData getById(int idTypeRoom);
 }

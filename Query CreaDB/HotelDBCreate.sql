@@ -9,7 +9,8 @@ USE Hotel;
 DROP TABLE IF EXISTS Client;
 
 CREATE TABLE Client(
-	fiscalCode VARCHAR(64) NOT NULL PRIMARY KEY,
+	idClient INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	fiscalCode VARCHAR(64) NOT NULL ,
     name VARCHAR(32) NOT NULL,
     surname VARCHAR(32) NOT NULL,
     dateOfBirth VARCHAR(32) NOT NULL,
@@ -19,27 +20,30 @@ CREATE TABLE Client(
     phoneNumber VARCHAR(32) NOT NULL
 );
     
-DROP TABLE IF EXISTS Room;
-
-CREATE TABLE Room(
-	number INT NOT NULL PRIMARY KEY,
-    type VARCHAR(32) NOT NULL,
-    actualState VARCHAR(32) NOT NULL
-);
-    
 DROP TABLE IF EXISTS TypeRoom;
     
 CREATE TABLE TypeRoom(
-	typology VARCHAR(32) NOT NULL PRIMARY KEY,
+	idTypeRoom INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	typology VARCHAR(32) NOT NULL ,
     price DOUBLE NOT NULL
+);
+    
+DROP TABLE IF EXISTS Room;
+
+CREATE TABLE Room(
+	idRoom INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	number INT NOT NULL,
+    actualState VARCHAR(32) NOT NULL,
+    idType INT NOT NULL,
+    FOREIGN KEY (idType) REFERENCES TypeRoom(idTypeRoom)
 );
     
 DROP TABLE IF EXISTS Booking;
 
 CREATE TABLE Booking(
-	id INT NOT NULL AUTO_INCREMENT,
-    room INT NOT NULL,
-	client VARCHAR(64) NOT NULL,
+	idBooking INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idRoom INT NOT NULL,
+	idClient INT NOT NULL,
     peopleNumber INT NOT NULL,
     startDate DATE NOT NULL,
     endDate DATE NOT NULL,
@@ -48,8 +52,7 @@ CREATE TABLE Booking(
     deposit DOUBLE,
     checkInDate DATE,
     checkOutDate DATE,
-    CONSTRAINT pk_id PRIMARY KEY (id),
-    CONSTRAINT fk_room FOREIGN KEY (room) REFERENCES Room(number),
-    CONSTRAINT fk_client FOREIGN KEY (client) REFERENCES Client(fiscalCode)
+    FOREIGN KEY (idRoom) REFERENCES Room(idRoom),
+    FOREIGN KEY (idClient) REFERENCES Client(idClient)
 );
     

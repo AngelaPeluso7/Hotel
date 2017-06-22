@@ -2,14 +2,15 @@ package com.sopra.hotel.models;
 import com.sopra.hotel.models.RoomModel;
 
 public class RoomModel {
+	int idRoom;
 	int number;
-	Typology typeRoom;
+	int idType;
 	ActualState actualState;
 	
-	public RoomModel(int number, Typology typeRoom, ActualState actualState) {
-		super();
+	public RoomModel(int idRoom, int number, Typology typeRoom, ActualState actualState, int idType) {
+		this.idRoom = idRoom;
 		this.number = number;
-		this.typeRoom = typeRoom;
+		this.idType = idType;
 		this.actualState = actualState;
 	}
 	public RoomModel() {
@@ -18,40 +19,33 @@ public class RoomModel {
 	public RoomModel(int number) {
 		this.number = number;
 	}
-
-	public RoomModel(int number, Typology typeRoom) {
-		this.number = number;
-		this.typeRoom = typeRoom;
+	public int getIdRoom() {
+		return idRoom;
 	}
-	
+	public void setIdRoom(int idRoom) {
+		this.idRoom = idRoom;
+	}
 	public int getNumber() {
 		return number;
 	}
-
 	public void setNumber(int number) {
 		this.number = number;
 	}
-
-	public Typology getTypeRoom() {
-		return typeRoom;
+	public int getIdType() {
+		return idType;
 	}
-
-	public void setTypeRoom(Typology typeRoom) {
-		this.typeRoom = typeRoom;
+	public void setIdType(int idType) {
+		this.idType = idType;
 	}
-
 	public ActualState getActualState() {
 		return actualState;
 	}
-
 	public void setActualState(ActualState actualState) {
 		this.actualState = actualState;
 	}
-
 	@Override
 	public String toString() {
-		return "RoomModel [number=" + number + ", typeRoom=" + typeRoom + ", actualState=" + actualState + "]";
+		return "RoomModel [idRoom=" + idRoom + ", number=" + number + ", idType=" + idType + ", actualState="
+				+ actualState + "]";
 	}
-	
-	
 }

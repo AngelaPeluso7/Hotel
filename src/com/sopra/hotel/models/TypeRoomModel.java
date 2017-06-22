@@ -3,15 +3,23 @@ package com.sopra.hotel.models;
 import com.sopra.hotel.models.TypeRoomModel;
 
 public class TypeRoomModel {
+	int idTypeRoom;
 	Typology typology;
 	double price;
 		
-	public TypeRoomModel(Typology typology, double price) {
-		super();
+	public TypeRoomModel(int idTypeRoom, Typology typology, double price) {
+		this.idTypeRoom = idTypeRoom;
 		this.typology = typology;
 		this.price = price;
 	}
 	public TypeRoomModel() {
+	}
+	
+	public int getIdTypeRoom() {
+		return idTypeRoom;
+	}
+	public void setIdTypeRoom(int idTypeRoom) {
+		this.idTypeRoom = idTypeRoom;
 	}
 	public Typology getTypology() {
 		return typology;
@@ -27,6 +35,7 @@ public class TypeRoomModel {
 	}
 	@Override
 	public String toString() {
-		return "TypeRoomModel [typology=" + typology + ", price=" + price + "]";
+		return "TypeRoomModel [idTypeRoom=" + idTypeRoom + ", typology=" + typology + ", price=" + price + "]";
 	}
+	
 }

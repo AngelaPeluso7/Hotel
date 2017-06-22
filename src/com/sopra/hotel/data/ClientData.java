@@ -1,11 +1,19 @@
 package com.sopra.hotel.data;
 
 public class ClientData {
-String fiscalCode,name,surname,dateOfBirth,address, city, country, phoneNumber;
+	private int idClient;
+	private String fiscalCode;
+	private String name;
+	private String surname;
+	private String dateOfBirth;
+	private String address;
+	private String city;
+	private String country;
+	private String phoneNumber;
 	
-	public ClientData(String fiscalCode, String name, String surname, String dateOfBirth, String address, String city,
-			String country, String phoneNumber) {
-		super();
+	public ClientData(int idClient, String fiscalCode, String name, String surname, String dateOfBirth, String address,
+			String city, String country, String phoneNumber) {
+		this.idClient = idClient;
 		this.fiscalCode = fiscalCode;
 		this.name = name;
 		this.surname = surname;
@@ -17,6 +25,14 @@ String fiscalCode,name,surname,dateOfBirth,address, city, country, phoneNumber;
 	}
 
 	public ClientData() {
+	}
+
+	public int getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
 	}
 
 	public String getFiscalCode() {
@@ -85,10 +101,9 @@ String fiscalCode,name,surname,dateOfBirth,address, city, country, phoneNumber;
 
 	@Override
 	public String toString() {
-		return "ClientData [fiscalCode=" + fiscalCode + ", name=" + name + ", surname=" + surname + ", dateOfBirth="
-				+ dateOfBirth + ", address=" + address + ", city=" + city + ", country=" + country + ", phoneNumber="
-				+ phoneNumber + "]";
+		return "ClientData [idClient=" + idClient + ", fiscalCode=" + fiscalCode + ", name=" + name + ", surname="
+				+ surname + ", dateOfBirth=" + dateOfBirth + ", address=" + address + ", city=" + city + ", country="
+				+ country + ", phoneNumber=" + phoneNumber + "]";
 	}
-	
 	
 }

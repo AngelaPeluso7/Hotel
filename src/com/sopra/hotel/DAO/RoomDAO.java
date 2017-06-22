@@ -10,9 +10,15 @@ public interface RoomDAO {
 	
 	public boolean checkIsBusy(int roomNumber);
 	
-	public List<RoomModel> viewAllRoomFree();
+	public List<RoomModel> findAllRoomFree();
 	
 	public boolean checkIn(int roomNumber);
 	
 	public boolean checkOut(int roomNumber);
+	
+	public List<RoomModel> findAll();
+	
+	public RoomModel findById(int idRoom);
+	
+	public int findIdRoom(int number);
 }

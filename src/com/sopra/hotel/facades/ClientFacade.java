@@ -1,13 +1,18 @@
 package com.sopra.hotel.facades;
 
+import java.util.List;
+
 import com.sopra.hotel.data.ClientData;
-import com.sopra.hotel.models.ClientModel;
 
 public interface ClientFacade {
 	
-	public boolean newClient(ClientModel clientModel);
+	public boolean newClient(ClientData clientData);
 	
-	public ClientData getClientInfoToFiscalCode(String fiscalCode);
+	public ClientData getById(int idClient);
 	
-	public ClientData getClientInfoToNumber(String phoneNumber);
+	public ClientData getByFiscalCode(String fiscalCode);
+	
+	public ClientData getByNumber(String phoneNumber);
+	
+	public List<ClientData> getAll();
 }

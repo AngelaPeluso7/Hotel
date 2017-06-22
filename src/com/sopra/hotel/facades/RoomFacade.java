@@ -10,9 +10,15 @@ public interface RoomFacade {
     
 	public boolean checkIsBusy(int roomNumber);
 
-	public List<RoomData> viewAllRoomFree();
+	public List<RoomData> getAllRoomFree();
 	
 	public boolean checkIn(int roomNumber);
 	
 	public boolean checkOut(int roomNumber);
+	
+	public List<RoomData> getAll();
+	
+	public RoomData getById(int idRoom);
+	
+	public int getIdRoom(int number);
 }

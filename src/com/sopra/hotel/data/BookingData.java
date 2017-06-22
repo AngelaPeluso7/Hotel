@@ -1,26 +1,23 @@
 package com.sopra.hotel.data;
 
-import java.sql.Date;
-
-import com.sopra.hotel.models.ClientModel;
-import com.sopra.hotel.models.RoomModel;
-
 public class BookingData {
-	int id;
-    RoomModel room;
-	ClientModel client;
-	int peopleNumber;
-	Date startDate,endDate;
-    int nightNumber;
-    Double totalPrice,deposit;
-    Date checkInDate,checkOutDate;
-    
-	public BookingData(int id, RoomModel room, ClientModel client, int peopleNumber, Date startDate, Date endDate,
-		int nightNumber, Double totalPrice, Double deposit, Date checkInDate, Date checkOutDate) {
-		super();
-		this.id = id;
-		this.room = room;
-		this.client = client;
+	private int idBooking;
+	private int idRoom;
+	private int idClient;
+	private int peopleNumber;
+	private String startDate;
+	private String endDate;
+	private int nightNumber;
+	private Double totalPrice;
+	private Double deposit;
+	private String checkInDate;
+	private String checkOutDate;
+	
+	public BookingData(int idBooking, int idRoom, int idClient, int peopleNumber, String startDate, String endDate,
+			int nightNumber, Double totalPrice, Double deposit, String checkInDate, String checkOutDate) {
+		this.idBooking = idBooking;
+		this.idRoom = idRoom;
+		this.idClient = idClient;
 		this.peopleNumber = peopleNumber;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -34,28 +31,28 @@ public class BookingData {
 	public BookingData() {
 	}
 
-	public int getId() {
-		return id;
+	public int getIdBooking() {
+		return idBooking;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdBooking(int idBooking) {
+		this.idBooking = idBooking;
 	}
 
-	public RoomModel getRoom() {
-		return room;
+	public int getIdRoom() {
+		return idRoom;
 	}
 
-	public void setRoom(RoomModel room) {
-		this.room = room;
+	public void setIdRoom(int idRoom) {
+		this.idRoom = idRoom;
 	}
 
-	public ClientModel getClient() {
-		return client;
+	public int getIdClient() {
+		return idClient;
 	}
 
-	public void setClient(ClientModel client) {
-		this.client = client;
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
 	}
 
 	public int getPeopleNumber() {
@@ -66,19 +63,19 @@ public class BookingData {
 		this.peopleNumber = peopleNumber;
 	}
 
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 
@@ -106,28 +103,28 @@ public class BookingData {
 		this.deposit = deposit;
 	}
 
-	public Date getCheckInDate() {
+	public String getCheckInDate() {
 		return checkInDate;
 	}
 
-	public void setCheckInDate(Date checkInDate) {
+	public void setCheckInDate(String checkInDate) {
 		this.checkInDate = checkInDate;
 	}
 
-	public Date getCheckOutDate() {
+	public String getCheckOutDate() {
 		return checkOutDate;
 	}
 
-	public void setCheckOutDate(Date checkOutDate) {
+	public void setCheckOutDate(String checkOutDate) {
 		this.checkOutDate = checkOutDate;
 	}
 
 	@Override
 	public String toString() {
-		return "BookingData [id=" + id + ", room=" + room + ", client=" + client + ", peopleNumber=" + peopleNumber
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", nightNumber=" + nightNumber + ", totalPrice="
-				+ totalPrice + ", deposit=" + deposit + ", checkInDate=" + checkInDate + ", checkOutDate="
-				+ checkOutDate + "]";
+		return "BookingData [idBooking=" + idBooking + ", idRoom=" + idRoom + ", idClient=" + idClient
+				+ ", peopleNumber=" + peopleNumber + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", nightNumber=" + nightNumber + ", totalPrice=" + totalPrice + ", deposit=" + deposit
+				+ ", checkInDate=" + checkInDate + ", checkOutDate=" + checkOutDate + "]";
 	}
 	
 }
